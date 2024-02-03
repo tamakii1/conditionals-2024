@@ -1,0 +1,151 @@
+<!DOCTYPE html> <html><head>
+        <title>conditionals 2024</title>
+    <style>/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Header Styling */
+h1 {
+    color: #333333;
+    text-align: center;
+}
+
+/* Input Field Styling */
+.password-input {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    width: 200px;
+    border: 2px solid #333333;
+    border-radius: 5px;
+}
+
+/* Button Styling */
+.password-check {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.password-check:hover {
+    background-color: #45a049;
+}
+
+/* Denied Message Styling */
+.denied {
+    text-align: center;
+    color: red;
+    display: none;
+}
+
+/* Success Message Styling */
+.yes {
+    text-align: center;
+    color: green;
+    display: none;
+}
+
+/* Image Styling */
+img {
+    max-width: 100%;
+    height: auto;
+}</style></head>
+    <body>
+      
+
+        <h2>Second Grade Test 📚</h2>
+
+
+        <div class="english-div">
+            <h3>1. English Language Arts</h3>
+            <p>What is the abbreviation for Monday?</p>
+            <input class="english" placeholder="your answer">
+            <button class="english-button">Submit</button>
+            <div class="english-message"></div>
+        </div>
+
+        <div class="math-div">
+            <h3>2. Math</h3>
+            <p>What is 10 + 10 + 10?</p>
+            <input class="math" placeholder="your answer">
+            <button class="math-button">Submit</button>
+            <div class="math-message"></div>
+        </div>
+
+
+        <div class="ss-div">
+            <h3>3. Social Studies</h3>
+            <p>What is the capital of New York?</p>
+            <input class="social-studies" placeholder="your answer">
+            <button class="ss-button">Submit</button>
+            <div class="ss-message"></div>
+        </div>
+
+
+        <div class="sci-div">
+            <h3>4. Science </h3>
+            <p>Is ice a solid, liquid, or gas?</p>
+            <input class="science" placeholder="your answer">
+            <button class="science-button">Submit</button>
+            <div class="science-message"></div>
+        </div>   
+    
+
+<script>
+/*__POPCODESTART__*/
+var englishButton = document.querySelector(".english-button");
+var ssButton = document.querySelector(".ss-button");
+var mathButton = document.querySelector(".math-button");
+var scienceButton = document.querySelector(".science-button"); // For each of the test questions:
+//  - Use conditionals to check whether the correct answer was provided by the user. 
+//  - The click handlers for each question have been provided for you.
+// CODE ALONG
+// 1. Take a look at the code provided:
+//  - Each of the buttons for the first three subjects have already been stored in its own variable.
+
+englishButton.addEventListener("click", function () {
+  var englishInput = document.querySelector(".english").value; // 2. Write an if-else conditional statement.
+  //  - Check if the value of the variable englishInput is correct.
+  //  - The answer should be "Mon".
+  //  - If the user enters the correct answer, use .innerHTML to display the word "Correct!" in the ".english-message" div. 
+  //  - If incorrect, display "Wrong! Try again."
+}); // CODE SOLO
+
+mathButton.addEventListener("click", function () {
+  // NOTE: we treat numbers slightly different than strings.
+  //  - We need to write 'Number' before the grabbed value. 
+  var mathInput = Number(document.querySelector(".math").value); // 3. Write an if-else conditional statement.
+  //  - Check if the value of the variable mathInput is correct.
+  //  - The answer should be 30.
+  //  - If the user enters the correct answer, use .innerHTML to display the word "Yessss!" in the ".math-message" div. 
+  //  - If incorrect, display "Wrong! Try again."
+});
+ssButton.addEventListener("click", function () {
+  var ssInput = document.querySelector(".social-studies").value; // 4. Write an if-else conditional statement.
+  //  - Check if the value of the variable ssInput is correct.
+  //  - The answer should be "Albany".
+  //  - If the user enters the correct answer, use .innerHTML to display the word "You got it!" in the ".ss-message" div. 
+  //  - If incorrect, display "Womp, womp. Try again."
+});
+scienceButton.addEventListener("click", function () {// 5. Declare a variable that stores the value of the user input in the science section.
+  //  - Look at previous lines of code to help you out.
+  // 6. Write an if-else conditional statement.
+  //  - Check if the value of the input variable is correct.
+  //  - The answer should be "solid".
+  //  - If the user enters the correct answer, use .innerHTML to display the word "Rockstar!" in the ".science-message" div. 
+  //  - If incorrect, display "Sad. Try again."
+}); // Finish Early?
+//  - When a student gets the answer right, make it so their answer turns green. 
+//  - If they get it wrong, make their answer turn red.
+//  - Write a conditional statement so the English answer is correct for both the user inputs Mon and mon. 
+//  - Google compound conditionals to help you figure out how to do this!
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBvcGNvZGVQcmV2aWV3LmpzIl0sIm5hbWVzIjpbImVuZ2xpc2hCdXR0b24iLCJkb2N1bWVudCIsInF1ZXJ5U2VsZWN0b3IiLCJzc0J1dHRvbiIsIm1hdGhCdXR0b24iLCJzY2llbmNlQnV0dG9uIiwiYWRkRXZlbnRMaXN0ZW5lciIsImVuZ2xpc2hJbnB1dCIsInZhbHVlIiwibWF0aElucHV0IiwiTnVtYmVyIiwic3NJbnB1dCJdLCJtYXBwaW5ncyI6IkFBQUEsSUFBSUEsYUFBYSxHQUFHQyxRQUFRLENBQUNDLGFBQVQsQ0FBdUIsaUJBQXZCLENBQXBCO0FBQ0EsSUFBSUMsUUFBUSxHQUFHRixRQUFRLENBQUNDLGFBQVQsQ0FBdUIsWUFBdkIsQ0FBZjtBQUNBLElBQUlFLFVBQVUsR0FBR0gsUUFBUSxDQUFDQyxhQUFULENBQXVCLGNBQXZCLENBQWpCO0FBQ0EsSUFBSUcsYUFBYSxHQUFHSixRQUFRLENBQUNDLGFBQVQsQ0FBdUIsaUJBQXZCLENBQXBCLEMsQ0FJQTtBQUNBO0FBQ0E7QUFFQTtBQUNBO0FBQ0E7O0FBR0FGLGFBQWEsQ0FBQ00sZ0JBQWQsQ0FBK0IsT0FBL0IsRUFBd0MsWUFBVztBQUMvQyxNQUFJQyxZQUFZLEdBQUdOLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixVQUF2QixFQUFtQ00sS0FBdEQsQ0FEK0MsQ0FHL0M7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUtILENBWkQsRSxDQWVBOztBQUVBSixVQUFVLENBQUNFLGdCQUFYLENBQTRCLE9BQTVCLEVBQXFDLFlBQVc7QUFDNUM7QUFDQTtBQUNBLE1BQUlHLFNBQVMsR0FBR0MsTUFBTSxDQUFDVCxRQUFRLENBQUNDLGFBQVQsQ0FBdUIsT0FBdkIsRUFBZ0NNLEtBQWpDLENBQXRCLENBSDRDLENBSzVDO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFHSCxDQVpEO0FBZUFMLFFBQVEsQ0FBQ0csZ0JBQVQsQ0FBMEIsT0FBMUIsRUFBbUMsWUFBVztBQUMxQyxNQUFJSyxPQUFPLEdBQUdWLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixpQkFBdkIsRUFBMENNLEtBQXhELENBRDBDLENBRzFDO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFJSCxDQVhEO0FBY0FILGFBQWEsQ0FBQ0MsZ0JBQWQsQ0FBK0IsT0FBL0IsRUFBd0MsWUFBVyxDQUMvQztBQUNBO0FBR0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUlILENBYkQsRSxDQWVBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EiLCJzb3VyY2VzQ29udGVudCI6WyJsZXQgZW5nbGlzaEJ1dHRvbiA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIuZW5nbGlzaC1idXR0b25cIik7XG5sZXQgc3NCdXR0b24gPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnNzLWJ1dHRvblwiKTtcbmxldCBtYXRoQnV0dG9uID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5tYXRoLWJ1dHRvblwiKTtcbmxldCBzY2llbmNlQnV0dG9uID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5zY2llbmNlLWJ1dHRvblwiKTtcblxuXG5cbi8vIEZvciBlYWNoIG9mIHRoZSB0ZXN0IHF1ZXN0aW9uczpcbi8vICAtIFVzZSBjb25kaXRpb25hbHMgdG8gY2hlY2sgd2hldGhlciB0aGUgY29ycmVjdCBhbnN3ZXIgd2FzIHByb3ZpZGVkIGJ5IHRoZSB1c2VyLiBcbi8vICAtIFRoZSBjbGljayBoYW5kbGVycyBmb3IgZWFjaCBxdWVzdGlvbiBoYXZlIGJlZW4gcHJvdmlkZWQgZm9yIHlvdS5cblxuLy8gQ09ERSBBTE9OR1xuLy8gMS4gVGFrZSBhIGxvb2sgYXQgdGhlIGNvZGUgcHJvdmlkZWQ6XG4vLyAgLSBFYWNoIG9mIHRoZSBidXR0b25zIGZvciB0aGUgZmlyc3QgdGhyZWUgc3ViamVjdHMgaGF2ZSBhbHJlYWR5IGJlZW4gc3RvcmVkIGluIGl0cyBvd24gdmFyaWFibGUuXG5cblxuZW5nbGlzaEJ1dHRvbi5hZGRFdmVudExpc3RlbmVyKFwiY2xpY2tcIiwgZnVuY3Rpb24oKSB7XG4gICAgbGV0IGVuZ2xpc2hJbnB1dCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIuZW5nbGlzaFwiKS52YWx1ZTtcblxuICAgIC8vIDIuIFdyaXRlIGFuIGlmLWVsc2UgY29uZGl0aW9uYWwgc3RhdGVtZW50LlxuICAgIC8vICAtIENoZWNrIGlmIHRoZSB2YWx1ZSBvZiB0aGUgdmFyaWFibGUgZW5nbGlzaElucHV0IGlzIGNvcnJlY3QuXG4gICAgLy8gIC0gVGhlIGFuc3dlciBzaG91bGQgYmUgXCJNb25cIi5cbiAgICAvLyAgLSBJZiB0aGUgdXNlciBlbnRlcnMgdGhlIGNvcnJlY3QgYW5zd2VyLCB1c2UgLmlubmVySFRNTCB0byBkaXNwbGF5IHRoZSB3b3JkIFwiQ29ycmVjdCFcIiBpbiB0aGUgXCIuZW5nbGlzaC1tZXNzYWdlXCIgZGl2LiBcbiAgICAvLyAgLSBJZiBpbmNvcnJlY3QsIGRpc3BsYXkgXCJXcm9uZyEgVHJ5IGFnYWluLlwiXG4gICAgXG5cblxuXG59KTtcblxuXG4vLyBDT0RFIFNPTE9cblxubWF0aEJ1dHRvbi5hZGRFdmVudExpc3RlbmVyKFwiY2xpY2tcIiwgZnVuY3Rpb24oKSB7XG4gICAgLy8gTk9URTogd2UgdHJlYXQgbnVtYmVycyBzbGlnaHRseSBkaWZmZXJlbnQgdGhhbiBzdHJpbmdzLlxuICAgIC8vICAtIFdlIG5lZWQgdG8gd3JpdGUgJ051bWJlcicgYmVmb3JlIHRoZSBncmFiYmVkIHZhbHVlLiBcbiAgICBsZXQgbWF0aElucHV0ID0gTnVtYmVyKGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIubWF0aFwiKS52YWx1ZSk7XG5cbiAgICAvLyAzLiBXcml0ZSBhbiBpZi1lbHNlIGNvbmRpdGlvbmFsIHN0YXRlbWVudC5cbiAgICAvLyAgLSBDaGVjayBpZiB0aGUgdmFsdWUgb2YgdGhlIHZhcmlhYmxlIG1hdGhJbnB1dCBpcyBjb3JyZWN0LlxuICAgIC8vICAtIFRoZSBhbnN3ZXIgc2hvdWxkIGJlIDMwLlxuICAgIC8vICAtIElmIHRoZSB1c2VyIGVudGVycyB0aGUgY29ycmVjdCBhbnN3ZXIsIHVzZSAuaW5uZXJIVE1MIHRvIGRpc3BsYXkgdGhlIHdvcmQgXCJZZXNzc3MhXCIgaW4gdGhlIFwiLm1hdGgtbWVzc2FnZVwiIGRpdi4gXG4gICAgLy8gIC0gSWYgaW5jb3JyZWN0LCBkaXNwbGF5IFwiV3JvbmchIFRyeSBhZ2Fpbi5cIlxuICAgIFxuXG59KTtcblxuXG5zc0J1dHRvbi5hZGRFdmVudExpc3RlbmVyKFwiY2xpY2tcIiwgZnVuY3Rpb24oKSB7XG4gICAgbGV0IHNzSW5wdXQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnNvY2lhbC1zdHVkaWVzXCIpLnZhbHVlO1xuXG4gICAgLy8gNC4gV3JpdGUgYW4gaWYtZWxzZSBjb25kaXRpb25hbCBzdGF0ZW1lbnQuXG4gICAgLy8gIC0gQ2hlY2sgaWYgdGhlIHZhbHVlIG9mIHRoZSB2YXJpYWJsZSBzc0lucHV0IGlzIGNvcnJlY3QuXG4gICAgLy8gIC0gVGhlIGFuc3dlciBzaG91bGQgYmUgXCJBbGJhbnlcIi5cbiAgICAvLyAgLSBJZiB0aGUgdXNlciBlbnRlcnMgdGhlIGNvcnJlY3QgYW5zd2VyLCB1c2UgLmlubmVySFRNTCB0byBkaXNwbGF5IHRoZSB3b3JkIFwiWW91IGdvdCBpdCFcIiBpbiB0aGUgXCIuc3MtbWVzc2FnZVwiIGRpdi4gXG4gICAgLy8gIC0gSWYgaW5jb3JyZWN0LCBkaXNwbGF5IFwiV29tcCwgd29tcC4gVHJ5IGFnYWluLlwiXG5cblxuXG59KTtcblxuXG5zY2llbmNlQnV0dG9uLmFkZEV2ZW50TGlzdGVuZXIoXCJjbGlja1wiLCBmdW5jdGlvbigpIHtcbiAgICAvLyA1LiBEZWNsYXJlIGEgdmFyaWFibGUgdGhhdCBzdG9yZXMgdGhlIHZhbHVlIG9mIHRoZSB1c2VyIGlucHV0IGluIHRoZSBzY2llbmNlIHNlY3Rpb24uXG4gICAgLy8gIC0gTG9vayBhdCBwcmV2aW91cyBsaW5lcyBvZiBjb2RlIHRvIGhlbHAgeW91IG91dC5cblxuXG4gICAgLy8gNi4gV3JpdGUgYW4gaWYtZWxzZSBjb25kaXRpb25hbCBzdGF0ZW1lbnQuXG4gICAgLy8gIC0gQ2hlY2sgaWYgdGhlIHZhbHVlIG9mIHRoZSBpbnB1dCB2YXJpYWJsZSBpcyBjb3JyZWN0LlxuICAgIC8vICAtIFRoZSBhbnN3ZXIgc2hvdWxkIGJlIFwic29saWRcIi5cbiAgICAvLyAgLSBJZiB0aGUgdXNlciBlbnRlcnMgdGhlIGNvcnJlY3QgYW5zd2VyLCB1c2UgLmlubmVySFRNTCB0byBkaXNwbGF5IHRoZSB3b3JkIFwiUm9ja3N0YXIhXCIgaW4gdGhlIFwiLnNjaWVuY2UtbWVzc2FnZVwiIGRpdi4gXG4gICAgLy8gIC0gSWYgaW5jb3JyZWN0LCBkaXNwbGF5IFwiU2FkLiBUcnkgYWdhaW4uXCJcblxuXG5cbn0pO1xuXG4vLyBGaW5pc2ggRWFybHk/XG4vLyAgLSBXaGVuIGEgc3R1ZGVudCBnZXRzIHRoZSBhbnN3ZXIgcmlnaHQsIG1ha2UgaXQgc28gdGhlaXIgYW5zd2VyIHR1cm5zIGdyZWVuLiBcbi8vICAtIElmIHRoZXkgZ2V0IGl0IHdyb25nLCBtYWtlIHRoZWlyIGFuc3dlciB0dXJuIHJlZC5cbi8vICAtIFdyaXRlIGEgY29uZGl0aW9uYWwgc3RhdGVtZW50IHNvIHRoZSBFbmdsaXNoIGFuc3dlciBpcyBjb3JyZWN0IGZvciBib3RoIHRoZSB1c2VyIGlucHV0cyBNb24gYW5kIG1vbi4gXG4vLyAgLSBHb29nbGUgY29tcG91bmQgY29uZGl0aW9uYWxzIHRvIGhlbHAgeW91IGZpZ3VyZSBvdXQgaG93IHRvIGRvIHRoaXMhIl19</script></body></html>
